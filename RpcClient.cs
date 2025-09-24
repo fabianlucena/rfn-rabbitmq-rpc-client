@@ -128,5 +128,39 @@ namespace RFRabbitMQRpcClient
 
             GC.SuppressFinalize(this);
         }
+
+        public async Task<object?> CallOkAsync(
+            string routingKey,
+            object? data = null,
+            string errorType = "Error",
+            string? errorMessage = null,
+            int errorStatusCode = 500,
+            CancellationToken cancellationToken = default
+        )
+        {
+            var result = await CallAsync<Result>(routingKey, data, cancellationToken);
+            if (!result.Ok)
+            {
+                if (!string.IsNullOrEmpty(result.Error))
+                    errorType = result.Error;
+
+                if (!string.IsNullOrEmpty(result.Message))
+                    errorMessage = result.Message;
+
+                if (result.StatusCode != null)
+                    errorStatusCode = result.StatusCode.Value;
+
+                if (!string.IsNullOrEmpty(errorMessage))
+                    throw new RpcException(errorType, errorStatusCode, errorMessage);
+
+                throw new RpcException(
+                    errorType,
+                    errorStatusCode,
+                    "Error getting response for {0} queue.", routingKey
+                );
+            }
+
+            return result.Value;
+        }
     }
 }
