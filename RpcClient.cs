@@ -1,5 +1,6 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using RabbitMQ.Client.Exceptions;
 using RFRabbitMQ;
 using RFRabbitMQRpcClient.Types;
 using System.Collections.Concurrent;
