@@ -1,6 +1,7 @@
 # RFRabbitMQRPCClient
 
-> 🇺🇸 English | 🇪🇸 [Versión en Español](README.es.md)
+> 🇺🇸 English | 🇪🇸 [Versión en Español](https://github.com/fabianlucena/rfn-rabbitmq-rpc-client/blob/main/README.es.md)
+> [Video tutorial](https://www.youtube.com/watch?v=hrU-upEMlPk)
 
 **RFRabbitMQRPCClient** is a lightweight .NET client designed to consume **RPC (Remote Procedure Call)** services over **RabbitMQ**.  
 It is part of the **RFRabbitMQ ecosystem**, providing a simple, reliable, and strongly‑typed way to perform synchronous request/response operations.
@@ -81,12 +82,12 @@ var response = await client.CallAsync<MyRequest, MyResponse>(
 ---
 
 ## 🔍 Versioning
-Current version: **1.3.1**
+Current version: **1.3.3**
 
 ---
 
 ## 🔗 Dependencies
-- `RFRabbitMQ` ≥ 1.3.1
+- `RFRabbitMQ` ≥ 1.3.3
 
 ---
 

@@ -8,7 +8,7 @@
 
   <PropertyGroup>
 	<PackageId>RFRabbitMQRPCClient</PackageId>
-	<Version>1.3.1</Version>
+	<Version>1.3.3</Version>
 	<Authors>Fabian Lucena</Authors>
 	<Description>Cliente .NET para consumir servicios RPC sobre RabbitMQ, parte del ecosistema RFRabbitMQ.</Description>
 	<PackageTags>rpc;rabbitmq;messaging;dotnet;microservices;queue;broker;client</PackageTags>
@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="" />
-    <PackageReference Include="RFRabbitMQ" Version="1.3.1" />
+    <PackageReference Include="RFRabbitMQ" Version="1.3.3" />
   </ItemGroup>
 
 </Project>
